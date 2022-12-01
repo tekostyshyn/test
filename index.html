@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebStudio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+  </head>
+
+  <body>
+    <div class="backdrop" data-modal>
+      <div class="modal">
+        <button class="" data-modal-close>
+          <svg class="" width="11" height="11">
+            <use href="./images/icons.svg#"></use>
+          </svg>
+        </button>
+        <h2 class="modal__title">Забронювати столик</h2>
+        <form>
+          <label>
+            <input
+              type="text"
+              name="client-name"
+              pattern="[A-Za-zА-Яа-яЁёІіЇїЄє]{2,}"
+              placeholder="Ваше ім’я"
+              required
+              title="Вкажіть ваше ім'я за допомогою літер"
+            />
+            На кого забронювати столик?</label
+          >
+          <label>
+            <input
+              type="tel"
+              name="phone-input"
+              id="phone-input"
+              required
+              placeholder="+38 (___) ___-__-__"
+              pattern="(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){12}(\s*)?"
+            />
+            Номер телефону</label
+          >
+          <label>
+            <select name="select" id="" class="select">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value=">8">8 і більше</option>
+            </select>
+            Столик на яку кількість осіб?
+          </label>
+          <label>
+            <input type="text" id="datepicker" placeholder="сьогодні" />
+            На яку дату бронювати?
+          </label>
+          <button type="submit">Оформити бронювання</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./jquery-3.6.1.min.js"></script>
+    <script src="./jquery.inputmask.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#phone-input").inputmask("+38 (999) 999-99-99");
+      });
+    </script>
+    <script>
+      $(function () {
+        $("#datepicker").datepicker({
+          monthNames: [
+            "Січень",
+            "Лютий",
+            "Березень",
+            "Квітень",
+            "Травень",
+            "Червень",
+            "Липень",
+            "Серпень",
+            "Вересень",
+            "Жовтень",
+            "Листопад",
+            "Грудень",
+          ],
+          dayNamesMin: ["пн", "вт", "ср", "чт", "пт", "сб", "нд"],
+        });
+      });
+    </script>
+  </body>
+</html>
