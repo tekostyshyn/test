@@ -59,7 +59,7 @@
             Столик на яку кількість осіб?
           </label>
           <label>
-            <input type="text" id="datepicker" placeholder="сьогодні" />
+            <input type="text" id="datepicker" placeholder="Сьогодні" required />
             На яку дату бронювати?
           </label>
           <button type="submit">Оформити бронювання</button>
@@ -78,6 +78,7 @@
     <script>
       $(function () {
         $("#datepicker").datepicker({
+          dateFormat: "dd/mm/yy",
           monthNames: [
             "Січень",
             "Лютий",
